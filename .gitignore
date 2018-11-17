@@ -48,3 +48,7 @@ gradle-app.setting
 # IntelliJ IDEA
 *.iml
 .idea/
+
+# Spring Boot
+config/
+!config/sample-*.*

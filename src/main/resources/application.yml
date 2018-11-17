@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      auto-commit: false
+  jpa:
+    database-platform: mysql
+    open-in-view: false
+    show-sql: false
+  thymeleaf:
+    cache: true
+    prefix: file:web-front/templates/
+logging:
+  level:
+    root: warn

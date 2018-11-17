@@ -1,13 +1,10 @@
 package com.github.hemoptysisheart.bui.configuration;
 
 import com.github.hemoptysisheart.bui.admin.jpa.entity.AdminEntityAnchor;
-import com.github.hemoptysisheart.bui.admin.jpa.repository.AdminRepositoryAnchor;
-import com.github.hemoptysisheart.bui.support.jpa.converter.JpaConverterAnchor;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.hibernate5.HibernateExceptionTranslator;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -24,7 +21,6 @@ import javax.sql.DataSource;
  */
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackageClasses = {AdminRepositoryAnchor.class})
 public class JpaConfiguration {
   @Bean
   @ConfigurationProperties("spring.datasource.hikari")
@@ -39,9 +35,7 @@ public class JpaConfiguration {
 
     LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
     factory.setDataSource(dataSource());
-    factory.setPackagesToScan(JpaConverterAnchor.class.getPackageName(),
-        AdminRepositoryAnchor.class.getPackageName(),
-        AdminEntityAnchor.class.getPackageName());
+    factory.setPackagesToScan(AdminEntityAnchor.class.getPackageName());
     factory.setJpaVendorAdapter(adapter);
 
     return factory;

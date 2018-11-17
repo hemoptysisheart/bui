@@ -1,8 +1,6 @@
 package com.github.hemoptysisheart.bui;
 
-import com.github.hemoptysisheart.bui.admin.controller.AdminControllerAnchor;
-import com.github.hemoptysisheart.bui.admin.jpa.entity.AdminEntityAnchor;
-import com.github.hemoptysisheart.bui.admin.jpa.repository.AdminRepositoryAnchor;
+import com.github.hemoptysisheart.bui.admin.controller.AdminControllerConfiguration;
 import com.github.hemoptysisheart.bui.configuration.ConfigurationAnchor;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,8 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 2018/11/17
  */
 @SpringBootApplication(scanBasePackageClasses = {ConfigurationAnchor.class,
-    AdminControllerAnchor.class,
-    AdminRepositoryAnchor.class,
-    AdminEntityAnchor.class})
+    AdminControllerConfiguration.class})
 public class TestConfiguration {
 }

@@ -24,17 +24,17 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     http.formLogin()
-        .loginPage("/admin/login")
+        .loginPage("/admin/signin")
+        .loginProcessingUrl("/admin/signin")
         .defaultSuccessUrl("/admin");
     http.logout()
-        .logoutUrl("/admin/logout")
+        .logoutUrl("/admin/signout")
         .logoutSuccessUrl("/");
 
     http.authorizeRequests()
         .antMatchers("/admin").permitAll()
-        .antMatchers("/admin/signup").anonymous()
+        .antMatchers("/admin/signin", "/admin/signup").anonymous()
         .antMatchers("/admin/**").authenticated()
-        .antMatchers("/**").permitAll()
-    ;
+        .antMatchers("/**").permitAll();
   }
 }

@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author H2
  * @since 2018/11/17
  */
-@SpringBootApplication(scanBasePackageClasses = {ConfigurationAnchor.class,
-    AdminControllerConfiguration.class})
+@SpringBootApplication(scanBasePackages = {"com.github.hemoptysisheart.bui.test"},
+    scanBasePackageClasses = {ConfigurationAnchor.class, AdminControllerConfiguration.class})
 public class TestConfiguration {
 }

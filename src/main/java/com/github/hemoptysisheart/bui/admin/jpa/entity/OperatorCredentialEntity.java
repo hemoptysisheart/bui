@@ -46,7 +46,7 @@ public class OperatorCredentialEntity implements OperatorCredential {
     requireNonNull(privateKey);
     requireNonNull(createdAt);
 
-    if (!operator.getName().equals(publicKey) && operator.getEmail().equals(publicKey)) {
+    if (!operator.getName().equals(publicKey) && !operator.getEmail().equals(publicKey)) {
       throw new IllegalArgumentException(
           format("publicKey does not match to name or email : publicKey='%s', operator=%s", publicKey, operator));
     }

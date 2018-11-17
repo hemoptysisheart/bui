@@ -22,6 +22,10 @@ version '0.0.1.SNAPSHOT'
 sourceCompatibility = 11
 targetCompatibility = 11
 
+ext {
+  apacheCommonsLangVersion = '3.8'
+}
+
 repositories {
   mavenCentral()
   jcenter()
@@ -44,4 +48,5 @@ dependencies {
   implementation 'mysql:mysql-connector-java'
 
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation "org.apache.commons:commons-lang3:${apacheCommonsLangVersion}"
 }

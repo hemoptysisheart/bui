@@ -1,10 +1,13 @@
 package com.github.hemoptysisheart.bui.configuration;
 
 import org.slf4j.Logger;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -17,6 +20,14 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
   private static final Logger log = getLogger(WebSecurityConfiguration.class);
 
+  @Bean
+  public PasswordEncoder passwordEncoder() {
+    return new BCryptPasswordEncoder();
+  }
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     if (log.isTraceEnabled()) {

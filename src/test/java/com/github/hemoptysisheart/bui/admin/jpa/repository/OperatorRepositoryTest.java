@@ -17,6 +17,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
+ * TODO {@link org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest}를 사용해 H2database로 테스트하는데 문제가 있는 듯.
+ *
  * @author H2
  * @since 2018/11/17
  */

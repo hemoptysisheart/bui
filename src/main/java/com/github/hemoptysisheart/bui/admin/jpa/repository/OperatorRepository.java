@@ -10,4 +10,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface OperatorRepository extends JpaRepository<OperatorEntity, Integer> {
+  boolean existsByName(String name);
+
+  boolean existsByEmail(String email);
 }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:lang="${#locale}">
+<head>
+    <meta name="author" content="justburrow" th:remove="all"/>
+    <meta name="since" content="2018/11/17 17:35" th:remove="all"/>
+    <meta charset="UTF-8"/>
+    <title>Form Errors</title>
+</head>
+<body>
+<main>
+    <h1>Form Errors</h1>
+    <h2>Field Errors</h2>
+    <div th:fragment="field(fieldName)" th:remove="tag">
+        <div th:if="${#fields.hasErrors(fieldName)}">
+            <ul th:each="err : ${#fields.errors(fieldName)}">
+                <li th:text="${err}">error</li>
+            </ul>
+        </div>
+    </div>
+</main>
+</body>
+</html>

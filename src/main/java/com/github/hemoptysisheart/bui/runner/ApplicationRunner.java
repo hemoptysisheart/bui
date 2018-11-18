@@ -1,6 +1,7 @@
 package com.github.hemoptysisheart.bui.runner;
 
 import com.github.hemoptysisheart.bui.configuration.ConfigurationAnchor;
+import com.github.hemoptysisheart.bui.controller.ControllerConfiguration;
 import org.slf4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +14,7 @@ import static org.slf4j.LoggerFactory.getLogger;
  * @author H2
  * @since 2018/11/17
  */
-@SpringBootApplication(scanBasePackageClasses = {ConfigurationAnchor.class})
+@SpringBootApplication(scanBasePackageClasses = {ConfigurationAnchor.class, ControllerConfiguration.class})
 public class ApplicationRunner {
   private static final Logger log = getLogger(ApplicationRunner.class);
 

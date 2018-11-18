@@ -1,6 +1,7 @@
 package com.github.hemoptysisheart.bui;
 
 import com.github.hemoptysisheart.bui.configuration.ConfigurationAnchor;
+import com.github.hemoptysisheart.bui.controller.ControllerConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
@@ -8,6 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 2018/11/17
  */
 @SpringBootApplication(scanBasePackages = {"com.github.hemoptysisheart.bui.test"},
-    scanBasePackageClasses = {ConfigurationAnchor.class})
+    scanBasePackageClasses = {ConfigurationAnchor.class, ControllerConfiguration.class})
 public class BuiTestConfiguration {
 }

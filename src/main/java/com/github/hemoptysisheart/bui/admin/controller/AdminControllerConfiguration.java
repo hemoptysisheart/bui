@@ -1,6 +1,6 @@
 package com.github.hemoptysisheart.bui.admin.controller;
 
-import com.github.hemoptysisheart.bui.admin.service.AdminServiceConfiguration;
+import com.github.hemoptysisheart.bui.admin.borderline.AdminBorderlineConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
  * @since 2018/11/17
  */
 @Configuration
-@ComponentScan(basePackageClasses = {AdminServiceConfiguration.class})
+@ComponentScan(basePackageClasses = {AdminBorderlineConfiguration.class})
 public class AdminControllerConfiguration {
 }

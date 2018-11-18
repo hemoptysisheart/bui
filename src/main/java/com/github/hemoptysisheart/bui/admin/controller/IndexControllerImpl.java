@@ -1,7 +1,9 @@
 package com.github.hemoptysisheart.bui.admin.controller;
 
+import com.github.hemoptysisheart.bui.admin.borderline.OperatorBorderline;
 import com.github.hemoptysisheart.bui.admin.controller.request.SignupReq;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,6 +20,9 @@ import static org.slf4j.LoggerFactory.getLogger;
 @Controller
 class IndexControllerImpl implements IndexController {
   private static final Logger log = getLogger(IndexControllerImpl.class);
+
+  @Autowired
+  private OperatorBorderline operatorBorderline;
 
   private String doSignupForm(Model model) {
     if (!model.containsAttribute("signupReq")) {

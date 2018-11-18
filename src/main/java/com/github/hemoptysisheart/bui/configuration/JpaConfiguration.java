@@ -1,7 +1,5 @@
 package com.github.hemoptysisheart.bui.configuration;
 
-import com.github.hemoptysisheart.bui.admin.jpa.entity.AdminEntityAnchor;
-import com.github.hemoptysisheart.bui.admin.jpa.repository.AdminRepositoryConfiguration;
 import com.github.hemoptysisheart.bui.support.jpa.converter.JpaConverterAnchor;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -23,7 +21,7 @@ import javax.sql.DataSource;
  * @since 2018/11/17
  */
 @Configuration
-@EnableJpaRepositories(basePackageClasses = {AdminRepositoryConfiguration.class})
+@EnableJpaRepositories
 @EnableTransactionManagement
 public class JpaConfiguration {
   @Bean
@@ -39,7 +37,7 @@ public class JpaConfiguration {
 
     LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
     factory.setDataSource(dataSource());
-    factory.setPackagesToScan(JpaConverterAnchor.class.getPackageName(), AdminEntityAnchor.class.getPackageName());
+    factory.setPackagesToScan(JpaConverterAnchor.class.getPackageName());
     factory.setJpaVendorAdapter(adapter);
 
     return factory;

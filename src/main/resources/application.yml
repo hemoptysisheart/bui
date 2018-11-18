@@ -12,7 +12,7 @@ spring:
     show-sql: false
   thymeleaf:
     cache: true
-    prefix: file:web-front/templates/
+    prefix: file:templates/
   messages:
     basename: i18n/messages, i18n/errors
     encoding: UTF-8

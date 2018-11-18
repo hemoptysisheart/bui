@@ -13,7 +13,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
  * @author H2
@@ -33,8 +33,17 @@ public class FrontControllerTest {
 
   @Test
   public void test_get_index() throws Exception {
-    this.mvc.perform(get("/"))
+    this.mvc
+        // When
+        .perform(get("/"))
+
+        // Then
         .andExpect(status().isOk())
+        .andExpect(view().name("fallback/default"))
+        .andExpect(xpath("/html/head/title")
+            .string("Fallback"))
+        .andExpect(xpath(".//*[@id='fallback-main']")
+            .exists())
         .andDo(print());
   }
 }

@@ -10,11 +10,6 @@ import java.util.Map;
  */
 public interface Document {
   /**
-   * @return 도큐먼트 ID.
-   */
-  long getId();
-
-  /**
    * @return 도큐먼트의 렌더링할 레이아웃 템플릿 이름.
    */
   String getLayout();

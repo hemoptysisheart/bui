@@ -1,0 +1,17 @@
+com.github.hemoptysisheart.bui:
+  test:
+    fallbackDocument:
+      title: 'Fallback'
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mysql://localhost/bui?connectionCollation=utf8mb4_bin&allowPublicKeyRetrieval=true&useSSL=false
+      username: bui
+      password: 'PASSWORD_PASSWORD_PASSWORD_PASSWORD_PASSWORD_PASSWORD_PASSWORD_PASSWORD_PASSWORD_PASSWORD_PASSWORD'
+      maximum-pool-size: 1
+  thymeleaf:
+    cache: false
+logging:
+  level:
+    org.hibernate.SQL: debug
+    com.github.hemoptysisheart.bui: info

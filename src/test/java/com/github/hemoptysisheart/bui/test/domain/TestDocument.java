@@ -1,9 +1,7 @@
 package com.github.hemoptysisheart.bui.test.domain;
 
-import com.github.hemoptysisheart.bui.domain.Panel;
 import com.github.hemoptysisheart.bui.domain.ValidDocument;
 
-import java.util.Map;
 import java.util.Objects;
 
 import static java.util.Objects.requireNonNull;
@@ -15,20 +13,14 @@ import static java.util.Objects.requireNonNull;
 public class TestDocument implements ValidDocument {
   private long id;
   private String layout;
-  private Map<String, Panel> panelMap;
 
   public TestDocument(String layout) {
     this(1L, layout);
   }
 
   public TestDocument(long id, String layout) {
-    this(id, layout, Map.of());
-  }
-
-  public <K, V> TestDocument(long id, String layout, Map<String, Panel> panelMap) {
     setId(id);
     setLayout(layout);
-    setPanelMap(panelMap);
   }
 
   public void setId(long id) {
@@ -46,10 +38,6 @@ public class TestDocument implements ValidDocument {
     this.layout = layout;
   }
 
-  public void setPanelMap(Map<String, Panel> panelMap) {
-    requireNonNull(panelMap, "panelMap is null.");
-    this.panelMap = panelMap;
-  }
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // com.github.hemoptysisheart.bui.domain.ValidDocument
@@ -62,11 +50,6 @@ public class TestDocument implements ValidDocument {
   @Override
   public String getLayout() {
     return this.layout;
-  }
-
-  @Override
-  public Map<String, Panel> getPanelMap() {
-    return this.panelMap;
   }
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,7 +73,6 @@ public class TestDocument implements ValidDocument {
     return new StringBuilder(TestDocument.class.getSimpleName())
         .append("{id=").append(this.id)
         .append(", layout='").append(this.layout).append('\'')
-        .append(", panelMap=").append(this.panelMap)
         .append('}').toString();
   }
 }

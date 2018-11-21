@@ -15,8 +15,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.Map;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
@@ -63,8 +61,6 @@ public class FrontControllerMvcTest {
         .willReturn(null);
     given(this.fallbackDocument.getLayout())
         .willReturn(layout);
-    given(this.fallbackDocument.getPanelMap())
-        .willReturn(Map.of());
 
     this.mvc
         // When
